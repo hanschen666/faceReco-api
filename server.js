@@ -10,8 +10,7 @@ import { image, apiCall } from "./controller/image.js";
 const db = knex({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
-    port: 5432,
+    host: "postgresql-round-98474",
     user: "superfish",
     password: "",
     database: "intelligent-face-recognition",
