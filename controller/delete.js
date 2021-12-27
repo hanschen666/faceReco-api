@@ -3,8 +3,8 @@ const handleDelete = (req, res, db) => {
   db("users")
     .where("id", id)
     .del()
-    .then(() => console.log)
-    .catch(err => console.log("cannot delete"));
+    .then(() => res.json("success"))
+    .catch((err) => console.log("cannot delete"));
 };
 
 export const remove = handleDelete;
