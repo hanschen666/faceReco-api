@@ -6,6 +6,7 @@ import { register } from "./controller/register.js";
 import { signin } from "./controller/signin.js";
 import { profile } from "./controller/profile.js";
 import { image, apiCall } from "./controller/image.js";
+import { remove } from "./controller/delete.js";
 
 const db = knex({
   client: "pg",
@@ -49,6 +50,10 @@ app.put("/image", (req, res) => {
 
 app.post("/imageurl", (req, res) => {
   apiCall(req, res);
+});
+
+app.delete("/delete", (req, res) => {
+  remove(req, res, db);
 });
 
 app.listen(process.env.PORT || 3002, () => {
