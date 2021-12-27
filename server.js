@@ -10,8 +10,10 @@ import { image, apiCall } from "./controller/image.js";
 const db = knex({
   client: "pg",
   connection: {
-    connectionString: process.env.DATABESE_URL,
-    ssl: true,
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 });
 
